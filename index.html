@@ -463,6 +463,15 @@ function showGreeting(username) {
   var usernameElement = document.getElementById('username');
   usernameElement.textContent = greeting;
 }
+  function resetUsername() {
+    var confirmation = confirm('Username will be reset.');
+    if (confirmation) {
+      localStorage.removeItem('username');
+      location.reload();
+    }
+  }
+</script>
+
   </script>
 </head>
 <body>
@@ -477,7 +486,7 @@ function showGreeting(username) {
   <div class="logo" onclick="goToHomePage()">
     <img src="https://i.imgur.com/HteblZ0.png" alt="Logo">
   </div>
-    <div id="username"></div>
+    <div id="username" onclick="resetUsername()"></div>
   <div class="navigation">
     <a href="#">HOME</a>
     <a href="#">ABOUT</a>
@@ -543,7 +552,7 @@ function showGreeting(username) {
       <img class="selection-icon" src="https://i.imgur.com/cWpEQaK.png" alt="Icon 2">
       <h1>HEAT</h1><p>Heat is an energy that is transferred from one body to another as the result of a difference in temperature.</p>
     </div> 
-         <div class="selection-item" data-original-icon="https://i.imgur.com/jvdnRtL.png" data-link="subpages/updown.html" onclick="handleSelectionClick(this)">
+         <div class="selection-item" data-original-icon="https://i.imgur.com/jvdnRtL.png" data-link="subpage/updown.html" onclick="handleSelectionClick(this)">
       <img class="selection-icon" src="https://i.imgur.com/jvdnRtL.png" alt="Icon 2">
       <h1>ELECTRICITY</h1><p>Electricity is a form of energy that results from the flow of charged particles.</p>
     </div>
