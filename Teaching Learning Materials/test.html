@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Code Upload/Download Example</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>GitHub Code Upload/Download Example</h1>
+
+  <button onclick="uploadCode()">Upload Code</button>
+  <button onclick="downloadCode()">Download Code</button>
+
+  <script>
+    const accessToken = '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';
+    const owner = 'sci-teachhub';
+    const repo = 'sci-teachhub.github.io';
+
+    async function uploadCode() {
+      const fileContent = 'Your code content here';
+      const fileName = 'example.js';
+      const branch = 'main';
+      const commitMessage = 'Upload code';
+
+      try {
+        const response = await axios.put(`https://api.github.com/repos/${owner}/${repo}/contents/${fileName}`, {
+          message: commitMessage,
+          content: btoa(fileContent), // Encode content as base64
+          branch: branch
+        }, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+        });
+
+        console.log('Code uploaded successfully:', response.data);
+      } catch (error) {
+        console.error('Error uploading code:', error);
+      }
+    }
+
+    async function downloadCode() {
+      const fileName = 'example.js';
+      const branch = 'main';
+
+      try {
+        const response = await axios.get(`https://api.github.com/repos/${owner}/${repo}/contents/${fileName}?ref=${branch}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+        });
+
+        const content = atob(response.data.content); // Decode content from base64
+        console.log('Code downloaded successfully:', content);
+      } catch (error) {
+        console.error('Error downloading code:', error);
+      }
+    }
+  </script>
+</body>
+</html>
