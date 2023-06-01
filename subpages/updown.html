@@ -239,7 +239,7 @@
 }
 
 #search-input {
-  width: 500px;
+  width: 400px;
   height: 50px;
   padding: 10px;
   border: none;
@@ -247,15 +247,6 @@
   margin-bottom: 20px;
 }
 
-#search-button {
-  padding: 12px 24px; /* Increase the padding to increase button size */
-  background-color: #152238;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 5px;
-}
 #search-results a {
   color: white;
 }
@@ -337,10 +328,9 @@
       <p>Content Knowledge / Mastery</p>
     </div>
   <div>
-  <div id="search-container" style="display: none; margin-top: 20px;"> Search here (hit enter to submit):
-    <input type="text" id="search-input" placeholder="Search for document title or file name">
-  <p id="search-results" style="display: none; margin-top: 20px;"></p>
-</div>
+  <div id="search-container" style="display: none; margin-top: 40px;">
+    <input type="text" id="search-input" placeholder="Search, example: Electricity. Hit enter to submit.">
+  <p id="search-results" style="display: none; margin-top: 20px;"></p> 
 <div>
 <!-- Container for Instructional / Teaching Strategy search results -->
 <div id="instructional-results" style="display: none;">
@@ -433,7 +423,7 @@ function showSearchBar(category) {
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
 
-  searchInput.value = 'Electricity'; // Clear the search input
+
   searchResults.style.display = 'none'; // Hide previous search results
   searchContainer.style.display = 'flex'; // Show the search container
 
