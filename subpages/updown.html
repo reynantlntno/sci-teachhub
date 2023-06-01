@@ -108,8 +108,7 @@
       color: white;
     }
 
-    .upload-container,
-    .download-container {
+    .upload-container {
       display: none;
       background-image: url(https://i.imgur.com/fAc7KYN.gif);
       padding: 20px;
@@ -178,8 +177,13 @@
     }
 
 .download-container {
+  display: flex;
+  padding: 20px;
   text-align: center;
   grid-template-columns: repeat(1, 1fr);
+  justify-content: space-between;
+  background-image: url(https://i.imgur.com/fAc7KYN.gif);
+
 }
 
 .button-container {
@@ -189,6 +193,7 @@
   margin-top: 20px;
 }
 #search-container {
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
