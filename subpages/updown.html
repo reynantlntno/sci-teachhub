@@ -126,6 +126,7 @@
       background-image: url(https://i.imgur.com/3D5h9EH.gif);
       background-size: cover;
       background-position: center;
+      padding: 30px;
     }
         .down-header {
       grid-column: 1 / -1;
@@ -134,8 +135,10 @@
       font-weight: light;
       text-align: left;
       font-family: Cabin, sans-serif;
+      margin-right: 80px;
+      margin-bottom: 20px;
     }
-        .down-item {
+      .down-item {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -151,12 +154,6 @@
       background-color: black;
     }
 
-    .down-item img {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 10px;
-    }
-
     .down-item p {
       font-size: 24px;
       text-align: center;
@@ -164,7 +161,7 @@
     }
 
     .active {
-      display: block;
+      display: flex;
     }
 
     .upload-form {
@@ -228,6 +225,16 @@
   justify-content: center;
   gap: 0px;
   margin-top: 20px;
+}
+    .search-head {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0px;
+      padding: 0px;
+      background-image: url(https://i.imgur.com/3D5h9EH.gif);
+      background-size: cover;
+      background-position: center;
+
 }
 #search-container {
   display: flex;
@@ -318,7 +325,7 @@
 <!-- New container for download options -->
 <div class="download-container">
   <h2 class="down-header">Choose one</h2>
-    <div class="down-item" onclick="showSearchBar('Instructional / Teaching Strategy')">
+      <div class="down-item" onclick="showSearchBar('Instructional / Teaching Strategy')">
       <p>Instructional / Teaching Strategy</p>
     </div>
     <div class="down-item" onclick="showSearchBar('Teaching-Learning Materials')">
@@ -327,11 +334,14 @@
           <div class="down-item" onclick="showSearchBar('Content Knowledge / Mastery')">
       <p>Content Knowledge / Mastery</p>
     </div>
-  <div>
+  </div>
+
+  <div class="search-head">
   <div id="search-container" style="display: none; margin-top: 40px;">
     <input type="text" id="search-input" placeholder="Search, example: Electricity. Hit enter to submit.">
   <p id="search-results" style="display: none; margin-top: 20px;"></p> 
 <div>
+</div>
 <!-- Container for Instructional / Teaching Strategy search results -->
 <div id="instructional-results" style="display: none;">
   <h3>Instructional / Teaching Strategy Search Results</h3>
