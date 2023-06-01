@@ -454,7 +454,13 @@ function searchFiles() {
   const category = searchInput.getAttribute('data-category');
   const searchTerm = searchInput.value.toLowerCase();
 
-  // Simulated search results (replace with actual search logic)
+  // Display "Searching in database..." message
+  searchResults.innerText = 'Searching in database...';
+  searchResults.style.display = 'block';
+
+  // Delay the search results by 2 seconds
+  setTimeout(function() {
+    // Simulated search results (replace with actual search logic)
   let files = [];
 
   if (category === 'Instructional / Teaching Strategy') {
@@ -488,10 +494,10 @@ function searchFiles() {
 
   tableHtml += '</table>';
 
-  searchResults.innerHTML = tableHtml;
-  searchResults.style.display = 'block';
+    searchResults.innerHTML = tableHtml;
+    searchResults.style.display = 'block';
+  }, 2000); // 2 seconds delay
 }
-
 
 
     // Function to show the upload popup
