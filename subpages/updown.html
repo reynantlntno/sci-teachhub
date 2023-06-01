@@ -108,12 +108,59 @@
       color: white;
     }
 
-    .upload-container,
-    .download-container {
+    .upload-container {
+        display: none;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0px;
+      padding: 0px;
+      background-image: url(https://i.imgur.com/3D5h9EH.gif);
+      background-size: cover;
+      height: 1000px;
+      background-position: center;
+    }
+      .download-container {
       display: none;
-      background-image: url(https://i.imgur.com/fAc7KYN.gif);
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0px;
+      padding-bottom: 20px;
+      background-image: url(https://i.imgur.com/3D5h9EH.gif);
+      background-size: cover;
+      background-position: center;
+    }
+        .down-header {
+      grid-column: 1 / -1;
+      padding: 20px;
+      font-size: 30px;
+      font-weight: light;
+      text-align: left;
+      font-family: Avenir, sans-serif;
+    }
+        .down-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
       transition: all 0.3s ease;
+      cursor: pointer; /* Add cursor pointer for clickable effect */
+    }
+
+    .down-item:hover {
+      transform: scale(1.05);
+      background-color: black;
+    }
+
+    .down-item img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .down-item p {
+      font-size: 24px;
+      text-align: center;
+      color: white;
     }
 
     .active {
@@ -122,11 +169,9 @@
 
     .upload-form {
       display: grid;
-
       gap: 10px;
-      margin-bottom: 20px;
-      margin-top: 20px;
       justify-content: center;
+      padding-top: 30px;
     }
 
     .upload-form label {
@@ -177,10 +222,6 @@
       border-radius: 6px;
     }
 
-.download-container {
-  text-align: center;
-  grid-template-columns: repeat(1, 1fr);
-}
 
 .button-container {
   display: flex;
@@ -285,18 +326,16 @@
 
 <!-- New container for download options -->
 <div class="download-container">
-  <h2 class="selections-header">Choose one</h2>
-  <div class="button-container">
-    <div class="selection-item" onclick="showSearchBar('Instructional / Teaching Strategy')">
+  <h2 class="down-header">Choose one</h2>
+    <div class="down-item" onclick="showSearchBar('Instructional / Teaching Strategy')">
       <p>Instructional / Teaching Strategy</p>
     </div>
-    <div class="selection-item" onclick="showSearchBar('Teaching-Learning Materials')">
+    <div class="down-item" onclick="showSearchBar('Teaching-Learning Materials')">
       <p>Teaching-Learning Materials</p>
     </div>
-          <div class="selection-item" onclick="showSearchBar('Content Knowledge / Mastery')">
+          <div class="down-item" onclick="showSearchBar('Content Knowledge / Mastery')">
       <p>Content Knowledge / Mastery</p>
     </div>
-  </div>
   <div>
   <div id="search-container" style="display: none; margin-top: 20px;"> Search here (hit enter to submit):
     <input type="text" id="search-input" placeholder="Search for document title or file name">
